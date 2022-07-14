@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // Styles
 import "./Main.css";
@@ -12,10 +12,8 @@ type MainProp = {
 }
 
 export const Main= ({ title, movieDetails }: MainProp) => {
-  useEffect(() => {
-    console.log(movieDetails);
-  }, [])
-  
+  const [loading, setLoading] = useState<boolean>(true);
+
   return (
     <div>
       {title}
@@ -26,13 +24,15 @@ export const Main= ({ title, movieDetails }: MainProp) => {
         <input type="text" name="search" placeholder="Search for a movie..."/>
         <button>Search</button>
       </div>
-      <div>
-        Content
-
-      </div>
-     <div>
-      Spinner
-     </div>
+      {loading ? "Loading..." : ( 
+        <div>
+          <div>
+            {movieDetails.map(mov => (
+              <p>{mov.title}</p>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
