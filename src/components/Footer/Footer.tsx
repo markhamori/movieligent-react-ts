@@ -1,10 +1,9 @@
-import "./Footer.css"
+import "./Footer.css";
 
 export const Footer = () => {
   return (
-    <div>
-      Footer component
+    <footer>
       <p>Design & Build: Mark Hamori</p>
-    </div>
-  )
-}
+    </footer>
+  );
+};

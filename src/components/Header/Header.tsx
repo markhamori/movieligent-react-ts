@@ -1,20 +1,19 @@
+// Images
+import Logo from "../../assets/Movieligent-logo.svg";
+
 // Components
-import { Favorites } from "../Favorites/Favorites"
+import { Favorites } from "../Favorites/Favorites";
 
 // Styles
-import "./Header.css"
+import "./Header.css";
 
 export const Header = () => {
   return (
-    <div>
-      Header Component
-      <div>
-        Logo
+    <div className="header">
+      <div className="header__logo">
+        <img src={Logo} alt="movieligent-logo" />
       </div>
-      ----------------
-    <div>
-      <Favorites/>
+      <Favorites />
     </div>
-    </div>
-  )
-}
+  );
+};

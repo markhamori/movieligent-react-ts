@@ -1,0 +1,8 @@
+.app {
+  min-height: 100vh;
+  min-width: 100vw;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

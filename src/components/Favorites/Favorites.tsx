@@ -1,11 +1,17 @@
+import { BsFillSuitHeartFill } from "react-icons/bs";
+
 // Style
-import "./Favorites.css"
+import "./Favorites.css";
 
 export const Favorites = () => {
   return (
-    <div>
-      Favorites component in Header<br/>
-      -------------------
+    <div className="favorites">
+      <button className="favorites__button">
+        Favorites
+        <span>
+          <BsFillSuitHeartFill />
+        </span>
+      </button>
     </div>
-  )
-}
+  );
+};
