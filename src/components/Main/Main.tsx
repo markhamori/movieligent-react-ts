@@ -16,10 +16,7 @@ export const Main= ({ title, movieDetails }: MainProp) => {
 
   return (
     <div>
-      {title}
-      <div>
-        Favorites
-      </div>
+      {title} component
       <div>
         <input type="text" name="search" placeholder="Search for a movie..."/>
         <button>Search</button>
@@ -33,7 +30,8 @@ export const Main= ({ title, movieDetails }: MainProp) => {
           </div>
         </div>
       )}
-      <button onClick={(e: React.MouseEvent<HTMLButtonElement> | undefined) => setLoading(!loading)}>Press</button>
+      <button onClick={(e: React.MouseEvent<HTMLButtonElement> | undefined) => setLoading(!loading)}>Press</button> <br/>
+      --------------------
     </div>
   );
 };
