@@ -1,8 +1,13 @@
 import "./MovieCard.css";
 
 // Types
-import { CardProps } from "../"
+import { CardProps } from "../../types/types"
 
-export const MovieCard = ({title, overview, releaseDate}) => {
-  return <div>MovieCard</div>;
+export const MovieCard = ({title, overview, releaseDate}: CardProps) => {
+  return (
+    <>
+      <h2>{title}</h2>
+      <p>{overview}</p>
+    </>
+  );
 };

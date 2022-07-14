@@ -4,6 +4,7 @@ import { FiSearch } from "react-icons/fi";
 
 // Components
 import { Spinner } from "../Spinner/Spinner";
+import { MovieCard } from "../MovieCard/MovieCard"
 
 // Styles
 import "./Main.css";
@@ -107,8 +108,7 @@ export const Main = () => {
           movieDetails &&
           movieDetails.map((mov) => (
             <div onDoubleClick={handleDblClick}>
-              <h4>{mov.title}</h4>
-              <p>{mov.overview}</p>
+              <MovieCard title={mov.title} overview={mov.overview} releaseDate={mov.release_date}/>
             </div>
           ))
         )}
