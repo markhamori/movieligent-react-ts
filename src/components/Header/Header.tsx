@@ -7,12 +7,7 @@ export const Header = () => {
       <div>
         Logo
       </div>
-      <div>
-        Favorites
-      </div>
-      <div>
-        Search bar
-      </div>
+
     </div>
   )
 }

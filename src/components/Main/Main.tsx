@@ -1,10 +1,38 @@
+import { useEffect } from "react";
+
+// Styles
 import "./Main.css";
 
-export const Main = () => {
+// Types
+import { MovieDetailType } from "../../types/types"
+
+type MainProp = {
+  title: string,
+  movieDetails: MovieDetailType[]
+}
+
+export const Main= ({ title, movieDetails }: MainProp) => {
+  useEffect(() => {
+    console.log(movieDetails);
+  }, [])
+  
   return (
     <div>
+      {title}
+      <div>
+        Favorites
+      </div>
+      <div>
+        <input type="text" name="search" placeholder="Search for a movie..."/>
+        <button>Search</button>
+      </div>
+      <div>
+        Content
+
+      </div>
+     <div>
       Spinner
-      <button role="alert">Alert</button>
+     </div>
     </div>
   );
 };

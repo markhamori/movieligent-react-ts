@@ -10,13 +10,38 @@ import { Footer } from "./components/Footer/Footer";
 import dummyData from "./dummyData.json";
 
 // Types
-import { MoviesDataType } from "./types/types"
+import { MovieDetailType } from "./types/types"
 
 function App() {
+  const [movieDetails, setMovieDetails] = useState<MovieDetailType[]>([]);
+
+  const getMovieDetails = () => {
+    dummyData.results.map(res => {
+      const { id, overview, poster_path, release_date, title } = res;
+
+      const movieArray = {
+        id,
+        overview,
+        poster_path,
+        release_date,
+        title
+      }
+
+      setMovieDetails(prev => [
+        ...prev,
+       movieArray
+      ])
+    });
+  }
+
+  useEffect(() => {
+    getMovieDetails()
+  }, [])
+
   return (
     <div className="app">
       <Header />
-      <Main />
+      <Main title={"Main"} movieDetails={movieDetails}/>
       <Footer />
     </div>
   );
