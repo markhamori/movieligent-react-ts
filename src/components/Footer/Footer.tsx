@@ -2,6 +2,8 @@ import "./Footer.css"
 
 export const Footer = () => {
   return (
-    <div>Footer</div>
+    <div>
+      <p>Design & Build: Mark Hamori</p>
+    </div>
   )
 }
