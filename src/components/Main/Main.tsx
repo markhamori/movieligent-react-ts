@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 // Styles
 import "./Main.css";
@@ -33,6 +33,7 @@ export const Main= ({ title, movieDetails }: MainProp) => {
           </div>
         </div>
       )}
+      <button onClick={(e: React.MouseEvent<HTMLButtonElement> | undefined) => setLoading(!loading)}>Press</button>
     </div>
   );
 };
