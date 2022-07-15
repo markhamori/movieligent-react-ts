@@ -1,25 +1,8 @@
 .app {
   min-height: 100vh;
   min-width: 100vw;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-
-/* 
-::-webkit-scrollbar-track
-{
-	background-color: #2a2a2a;
-}
-
-::-webkit-scrollbar
-{
-	width: 10px;
-	background-color: #2a2a2a;
-}
-
-::-webkit-scrollbar-thumb
-{
-	background-color: #3b3b3b;
-} */

@@ -26,7 +26,7 @@ function App() {
 
   const CancelToken = axios.CancelToken;
   const source = CancelToken.source();
-  
+
   const handleFetch = async () => {
     try {
       if (query) {
@@ -36,13 +36,15 @@ function App() {
         });
         setMovieDetails(data.results);
         setTotalPages(data.total_pages);
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
       }
     } catch (err) {
       console.error(err);
     }
   };
- 
+
   useEffect(() => {
     handleFetch();
   }, [query, pages]);
@@ -79,8 +81,19 @@ function App() {
 
   return (
     <div className="app">
-      <Header handleChange={handleChange} handleKeyPress={handleKeyPress} searchButton={searchButton}/>
-      <Main pages={pages} totalPages={totalPages} selectPage={selectPage} loading={loading} movieDetails={movieDetails} handleDblClick={handleDblClick}/>
+      <Header
+        handleChange={handleChange}
+        handleKeyPress={handleKeyPress}
+        searchButton={searchButton}
+      />
+      <Main
+        pages={pages}
+        totalPages={totalPages}
+        selectPage={selectPage}
+        loading={loading}
+        movieDetails={movieDetails}
+        handleDblClick={handleDblClick}
+      />
       <Footer />
     </div>
   );
