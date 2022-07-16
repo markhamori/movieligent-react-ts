@@ -7,9 +7,9 @@ export type MovieDetailType = {
 };
 
 export type HeaderProps = {
-  handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
-  handleKeyPress: React.KeyboardEventHandler<HTMLInputElement> | undefined;
-  searchButton: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  handleChange: React.ChangeEventHandler<HTMLInputElement>;
+  handleKeyPress: React.KeyboardEventHandler<HTMLInputElement>;
+  searchButton: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export type MainProps = {
@@ -18,7 +18,6 @@ export type MainProps = {
   selectPage: React.MouseEventHandler<HTMLButtonElement>;
   loading: boolean;
   movieDetails: MovieDetailType[];
-  handleDblClick: React.MouseEventHandler<HTMLDivElement>;
 };
 
 export type CardProps = {
@@ -26,4 +25,9 @@ export type CardProps = {
   overview: string;
   releaseDate: string;
   posterPath: string | null;
+};
+
+export type PaginationProps = {
+  totalPages: number | null;
+  selectPage: React.MouseEventHandler<HTMLButtonElement>;
 };

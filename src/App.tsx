@@ -60,23 +60,20 @@ function App() {
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      setQuery(query);
+      const value = e.currentTarget.value;
+      setQuery(value);
     }
   };
 
-  const searchButton = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setQuery(query);
+  const searchButton = (e: React.FormEvent<HTMLButtonElement>) => {
+    // const value = e.currentTarget.value;
+    console.log(e.bubbles);
+    // setQuery(value);
   };
 
-  const handleDblClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    console.log(e.target);
-  };
-
-  const selectPage = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // let targetValue = Number(e.target);
-    console.log(e.currentTarget);
-    // if (targetValue !== 0) setPages(targetValue);
+  const selectPage = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    let targetValue = Number(e.currentTarget.value);
+    setPages(targetValue);
   };
 
   return (
@@ -92,7 +89,6 @@ function App() {
         selectPage={selectPage}
         loading={loading}
         movieDetails={movieDetails}
-        handleDblClick={handleDblClick}
       />
       <Footer />
     </div>

@@ -10,5 +10,13 @@ body {
   margin: 0;
   background-color: #1e1e1e;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

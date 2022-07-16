@@ -1,3 +1,11 @@
+.movie__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  cursor: pointer;
+}
+
 .movie__card--details {
   position: relative;
   display: flex;
@@ -25,15 +33,19 @@
   background-size: 125%;
 }
 
-.movie__card--shadow {
+.movie__card--details:hover .movie__card--favorites {
+  opacity: 100%;
+}
+
+.movie__card--favorites {
   position: absolute;
-  left: -5px;
-  top: 0;
-  width: 20px;
-  height: 50px;
-  background: linear-gradient(220deg, #ef473a 10%, #cb2d3e 87%);
-  border-radius: 5px;
-  z-index: 10;
+  opacity: 50%;
+  right: 1rem;
+  top: 1rem;
+  font-size: 28px;
+  z-index: 100;
+  transition: 0.5s ease-in-out;
+  color: #cb2d3e;
 }
 
 .movie__card--overlay {

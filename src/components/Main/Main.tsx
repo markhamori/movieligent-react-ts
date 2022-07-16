@@ -1,6 +1,8 @@
 // Components
 import { Spinner } from "../Spinner/Spinner";
 import { MovieCard } from "../MovieCard/MovieCard";
+import { Favorites } from "../Favorites/Favorites";
+import { Pagination } from "../Pagination/Pagination";
 
 // Styles
 import "./Main.css";
@@ -14,48 +16,28 @@ export const Main = ({
   selectPage,
   loading,
   movieDetails,
-  handleDblClick,
 }: MainProps) => {
   return (
     <div className="main">
       <div className="main__title">
-        <h2>Start searching from hundreds of movies...</h2>
+        <h2>Start typing in the search field.</h2>
+        <Favorites />
       </div>
-      <div className="pagination">
-        {totalPages &&
-          [...Array(totalPages)].map((e, i) => (
-            <button
-              onClick={(e): React.MouseEventHandler<HTMLButtonElement> =>
-                selectPage
-              }
-              value={i + 1}
-              key={i + 1}
-            >
-              {i + 1}
-            </button>
-          ))}
-      </div>
+      <Pagination totalPages={totalPages} selectPage={selectPage} />
 
-      <div className="movie">
+      <div className="main__body">
         {loading ? (
           <Spinner />
         ) : (
           movieDetails &&
           movieDetails.map((mov) => (
-            <div
-              className="movie__card"
+            <MovieCard
               key={mov.id}
-              onDoubleClick={(e): React.MouseEventHandler<HTMLDivElement> =>
-                handleDblClick
-              }
-            >
-              <MovieCard
-                title={mov.title}
-                overview={mov.overview}
-                releaseDate={mov.release_date}
-                posterPath={mov.poster_path}
-              />
-            </div>
+              title={mov.title}
+              overview={mov.overview}
+              releaseDate={mov.release_date}
+              posterPath={mov.poster_path}
+            />
           ))
         )}
       </div>

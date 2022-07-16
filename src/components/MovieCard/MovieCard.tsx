@@ -1,9 +1,10 @@
+import { useState } from "react";
+
 // Styles
 import "./MovieCard.css";
 
 // Icons
-import { AiFillPoundCircle, AiOutlineClockCircle } from "react-icons/ai";
-import { BsFillSuitHeartFill } from "react-icons/bs";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 // Images
 import NotFound from "../../assets/Not-found.png";
@@ -17,8 +18,14 @@ export const MovieCard = ({
   posterPath,
   releaseDate,
 }: CardProps) => {
+  const [favorite, setFavorite] = useState<boolean>(false);
+
+  const changeToFavorite = () => {
+    setFavorite(!favorite);
+  };
+
   return (
-    <>
+    <div className="movie__card">
       <div
         className="movie__card--details"
         style={{
@@ -29,11 +36,14 @@ export const MovieCard = ({
           }`,
         }}
       >
+        <div className="movie__card--favorites" onClick={changeToFavorite}>
+          {favorite === true ? <AiFillHeart /> : <AiOutlineHeart />}
+        </div>
         <div className="movie__card--overlay">
           <h3>{title}</h3>
           <p>({releaseDate.slice(0, 4)})</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };

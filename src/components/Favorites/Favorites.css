@@ -1,7 +1,10 @@
 .favorites__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   height: 45px;
-  width: 115px;
+  width: 130px;
   font-size: 16px;
   background-color: #2a2a2a;
   border: none;
@@ -16,9 +19,6 @@
 }
 
 .favorites__button span {
-  position: absolute;
-  right: -0.8rem;
-  top: -0.8rem;
-  font-size: 28px;
+  padding-left: 0.25rem;
   color: #ef473a;
 }
