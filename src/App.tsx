@@ -22,7 +22,6 @@ function App() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const [movieDetails, setMovieDetails] = useState<MovieDetailType[]>([]);
-  const [favorites, setFavorites] = useState<[]>([]);
 
   const CancelToken = axios.CancelToken;
   const source = CancelToken.source();
@@ -34,6 +33,15 @@ function App() {
         const { data } = await axios.get(searchByTitle(query, pages), {
           cancelToken: source.token,
         });
+
+        // Add favorite key/value pair to results object
+        // const addFavorite = () => {
+        //   for (const result of data.results) {
+        //     result.favorite = false;
+        //   }
+        //   return data.results;
+        // };
+
         setMovieDetails(data.results);
         if (data.total_pages >= 12) {
           setTotalPages(12);

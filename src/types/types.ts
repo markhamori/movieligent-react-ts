@@ -4,6 +4,15 @@ export type MovieDetailType = {
   poster_path: string | null;
   release_date: string;
   title: string;
+  favorite: boolean;
+};
+
+export type FavMovieDetailType = {
+  overview: string;
+  poster_path: string | null;
+  release_date: string;
+  title: string;
+  favorite: boolean;
 };
 
 export type HeaderProps = {

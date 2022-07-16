@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Styles
 import "./MovieCard.css";
@@ -18,12 +18,7 @@ export const MovieCard = ({
   posterPath,
   releaseDate,
 }: CardProps) => {
-  const [favorite, setFavorite] = useState<boolean>(false);
-
-  const changeToFavorite = () => {
-    setFavorite(!favorite);
-  };
-
+  let favorite = true;
   return (
     <div className="movie__card">
       <div
@@ -36,7 +31,7 @@ export const MovieCard = ({
           }`,
         }}
       >
-        <div className="movie__card--favorites" onClick={changeToFavorite}>
+        <div className="movie__card--favorites">
           {favorite === true ? <AiFillHeart /> : <AiOutlineHeart />}
         </div>
         <div className="movie__card--overlay">
