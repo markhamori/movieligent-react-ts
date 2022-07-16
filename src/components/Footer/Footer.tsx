@@ -3,7 +3,9 @@ import "./Footer.css";
 export const Footer = () => {
   return (
     <footer>
-      <p>Design & Build: Mark Hamori</p>
+      <div className="container">
+        <p>Design & Build: Mark Hamori</p>
+      </div>
     </footer>
   );
 };

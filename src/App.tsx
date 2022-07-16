@@ -75,7 +75,7 @@ function App() {
 
   const selectPage = (e: React.MouseEvent<HTMLButtonElement>) => {
     // let targetValue = Number(e.target);
-    console.log(e);
+    console.log(e.currentTarget);
     // if (targetValue !== 0) setPages(targetValue);
   };
 

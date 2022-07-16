@@ -28,10 +28,10 @@ export const Main = ({
               onClick={(e): React.MouseEventHandler<HTMLButtonElement> =>
                 selectPage
               }
-              value={i}
-              key={i}
+              value={i + 1}
+              key={i + 1}
             >
-              {i}
+              {i + 1}
             </button>
           ))}
       </div>
@@ -44,6 +44,7 @@ export const Main = ({
           movieDetails.map((mov) => (
             <div
               className="movie__card"
+              key={mov.id}
               onDoubleClick={(e): React.MouseEventHandler<HTMLDivElement> =>
                 handleDblClick
               }
