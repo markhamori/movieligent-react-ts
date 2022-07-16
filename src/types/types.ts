@@ -28,6 +28,7 @@ export type CardProps = {
 };
 
 export type PaginationProps = {
+  pages: number;
   totalPages: number | null;
   selectPage: React.MouseEventHandler<HTMLButtonElement>;
 };

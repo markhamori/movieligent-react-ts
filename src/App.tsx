@@ -29,13 +29,17 @@ function App() {
 
   const handleFetch = async () => {
     try {
-      if (query) {
+      if (query && query !== "") {
         setLoading(true);
         const { data } = await axios.get(searchByTitle(query, pages), {
           cancelToken: source.token,
         });
         setMovieDetails(data.results);
-        setTotalPages(data.total_pages);
+        if (data.total_pages >= 12) {
+          setTotalPages(12);
+        } else {
+          setTotalPages(data.total_pages);
+        }
         setTimeout(() => {
           setLoading(false);
         }, 2000);
@@ -54,7 +58,7 @@ function App() {
     const value = e.target.value;
     setPages(1);
     if (value.length >= 3) setQuery(value);
-    if (value.length === 0) setQuery("Star Wars");
+    if (value.length === 0) setQuery("");
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -67,7 +71,7 @@ function App() {
 
   const searchButton = (e: React.FormEvent<HTMLButtonElement>) => {
     // const value = e.currentTarget.value;
-    console.log(e.bubbles);
+    console.log(e);
     // setQuery(value);
   };
 

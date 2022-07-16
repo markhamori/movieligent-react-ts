@@ -41,7 +41,11 @@ export const MovieCard = ({
         </div>
         <div className="movie__card--overlay">
           <h3>{title}</h3>
-          <p>({releaseDate.slice(0, 4)})</p>
+          {releaseDate === "" || undefined ? (
+            "(XXXX)"
+          ) : (
+            <p>({releaseDate.slice(0, 4)})</p>
+          )}
         </div>
       </div>
     </div>

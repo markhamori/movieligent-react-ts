@@ -23,7 +23,15 @@ export const Main = ({
         <h2>Start typing in the search field.</h2>
         <Favorites />
       </div>
-      <Pagination totalPages={totalPages} selectPage={selectPage} />
+      {totalPages !== 0 ? (
+        <Pagination
+          pages={pages}
+          totalPages={totalPages}
+          selectPage={selectPage}
+        />
+      ) : (
+        <p>Movie not found. Please try something else...</p>
+      )}
 
       <div className="main__body">
         {loading ? (

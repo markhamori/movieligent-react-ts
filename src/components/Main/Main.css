@@ -18,6 +18,7 @@
 
 .main__body {
   margin-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 5rem;
   display: flex;
   flex-direction: row;

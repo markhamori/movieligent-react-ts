@@ -22,27 +22,25 @@ export const Header = ({
       </div>
       <div className="header__menu">
         <div className="header__input">
-          <form>
-            <input
-              type="text"
-              name="search"
-              placeholder="Search a movie..."
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                handleChange(e)
-              }
-              onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) =>
-                handleKeyPress(e)
-              }
-            />
-            <button
-              type="button"
-              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                searchButton(e)
-              }
-            >
-              <FiSearch />
-            </button>
-          </form>
+          <input
+            type="text"
+            name="search"
+            placeholder="Search a movie..."
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              handleChange(e)
+            }
+            onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) =>
+              handleKeyPress(e)
+            }
+          />
+          <button
+            type="button"
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+              searchButton(e)
+            }
+          >
+            <FiSearch />
+          </button>
         </div>
       </div>
     </div>
