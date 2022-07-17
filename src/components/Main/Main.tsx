@@ -26,6 +26,9 @@ export const Main = ({
     if (favorite) localStorage.setItem("favorites", JSON.stringify(favorite));
   };
 
+  // Check the clicked movie is not already in the localstorge
+  // Check which item already added to the favorites. Show filled heart these
+
   return (
     <div className="main">
       <Favorites favorite={favorite} setFavorite={setFavorite} />
