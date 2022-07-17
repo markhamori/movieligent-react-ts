@@ -8,6 +8,7 @@ export type MovieDetailType = {
 };
 
 export type FavMovieDetailType = {
+  id: number;
   overview: string;
   poster_path: string | null;
   release_date: string;
