@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 // Styles
 import "./MovieCard.css";
 
@@ -36,10 +34,10 @@ export const MovieCard = ({
         </div>
         <div className="movie__card--overlay">
           <h3>{title}</h3>
-          {releaseDate === "" || undefined ? (
-            "(XXXX)"
-          ) : (
+          {releaseDate !== undefined ? (
             <p>({releaseDate.slice(0, 4)})</p>
+          ) : (
+            "(XXXX)"
           )}
         </div>
       </div>

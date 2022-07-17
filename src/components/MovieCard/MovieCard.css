@@ -23,6 +23,7 @@
   background-size: 100%;
   outline: 3px solid transparent;
   transition: all 0.7s;
+  animation: expand 1s ease forwards;
 }
 
 .movie__card--details:hover {
@@ -75,4 +76,13 @@
 
 .movie__card--overlay span {
   font-weight: 300;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(0.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
 }

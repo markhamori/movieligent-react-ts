@@ -42,3 +42,8 @@ export type PaginationProps = {
   totalPages: number | null;
   selectPage: React.MouseEventHandler<HTMLButtonElement>;
 };
+
+export type FavoriteProps = {
+  favorite: FavMovieDetailType[],
+  setFavorite: React.Dispatch<React.SetStateAction<FavMovieDetailType[]>>;
+}
