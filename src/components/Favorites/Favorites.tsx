@@ -6,6 +6,9 @@ import { MovieCard } from "../MovieCard/MovieCard";
 // Types
 import { FavMovieDetailType, FavoriteProps } from "../../types/types";
 
+// Icons
+import { BsHeartFill } from "react-icons/bs"
+
 // Styles
 import "./Favorites.css"
 
@@ -14,7 +17,6 @@ export const Favorites = ({ favorite, setFavorite }:FavoriteProps) => {
 
   const removeFromLs = (id: number) => {
     const saved = localStorage.getItem("favorites");
-
     if (saved) {
       const parseSaved = JSON.parse(saved);
       const filtered = parseSaved.filter(
@@ -24,7 +26,6 @@ export const Favorites = ({ favorite, setFavorite }:FavoriteProps) => {
       setFavorite(filtered);
       localStorage.setItem("favorites", JSON.stringify(filtered));
     }
-
     return null;
   };
 
@@ -45,12 +46,11 @@ export const Favorites = ({ favorite, setFavorite }:FavoriteProps) => {
             setShowFavorites(!showFavorites)
           }
         >
-          Favorites
-          <span>({favorite.length === null ? "0" : favorite.length})</span>
+          <BsHeartFill/>
+          <span>{favorite.length === null ? "0" : favorite.length}</span>
         </button>
       </div>
       
-
       {showFavorites && (
         <>
           <div className="favorites__title">
@@ -61,6 +61,7 @@ export const Favorites = ({ favorite, setFavorite }:FavoriteProps) => {
             </p>
           </div>
           <div className="favorites__body">
+            {favorite.length === 0 ? <p>Empty</p> : ""}
             {favorite &&
               favorite.map((fav) => (
                 <div
