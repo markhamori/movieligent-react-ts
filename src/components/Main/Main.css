@@ -19,6 +19,7 @@
 .main__body {
   margin-top: 1rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -43,5 +44,5 @@
 .main__illustration img {
   height: auto;
   max-width: 100%;
-  opacity: 50%;
+  opacity: 100%;
 }
