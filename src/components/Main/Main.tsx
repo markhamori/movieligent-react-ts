@@ -28,17 +28,17 @@ export const Main = ({
       arr.push(mov);
       localStorage.setItem("favorites", JSON.stringify(arr));
     } else {
+      // Check the clicked movie is not already in the localstorge
       favorite.map(el => {
         if(el.id === id) throw new Error("Already in the local storage.")
       });
-
       setFavorite(prev => [...prev, mov]);
-      localStorage.setItem("favorites", JSON.stringify(favorite));
-      console.log("Favorite added. If branch.");
+      arr.push(mov)
+      console.log(arr);
+      console.log(favorite);
+      localStorage.setItem("favorites", JSON.stringify(arr));
     }
   };
-
-  // Check the clicked movie is not already in the localstorge
   // Check which item already added to the favorites. Show filled heart these
 
   return (

@@ -8,6 +8,7 @@ import { FavMovieDetailType, FavoriteProps } from "../../types/types";
 
 // Icons
 import { BsHeartFill } from "react-icons/bs"
+import { FaTimes } from "react-icons/fa"
 
 // Styles
 import "./Favorites.css"
@@ -52,34 +53,42 @@ export const Favorites = ({ favorite, setFavorite }:FavoriteProps) => {
       </div>
       
       {showFavorites && (
-        <>
+        <div className="favorites__body">
+            
           <div className="favorites__title">
+          <button
+              className="favorites__button"
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                setShowFavorites(!showFavorites)
+              }
+              >
+              <FaTimes/>
+            </button>
             <h2>STORED FAVORITE MOVIE/MOVIES</h2>
             <p>
               Click the movie to{" "}
               <span style={{ color: "#ef473a" }}>remove.</span>
             </p>
+             
           </div>
-          <div className="favorites__body">
-            {favorite.length === 0 ? <p>Empty</p> : ""}
-            {favorite &&
-              favorite.map((fav) => (
-                <div
-                  key={fav.id}
-                  onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                    removeFromLs(fav.id)
-                  }
-                >
-                  <MovieCard
-                    title={fav.title}
-                    overview={fav.overview}
-                    releaseDate={fav.release_date}
-                    posterPath={fav.poster_path}
-                  />
-                </div>
-              ))}
-          </div>
-        </>
+          {favorite.length === 0 ? <p>Empty</p> : ""}
+          {favorite &&
+            favorite.map((fav) => (
+              <div
+                key={fav.id}
+                onClick={(e: React.MouseEvent<HTMLDivElement>) =>
+                  removeFromLs(fav.id)
+                }
+              >
+                <MovieCard
+                  title={fav.title}
+                  overview={fav.overview}
+                  releaseDate={fav.release_date}
+                  posterPath={fav.poster_path}
+                />
+              </div>
+            ))}
+        </div>
       )}
     </div>
   )

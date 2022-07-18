@@ -102,7 +102,7 @@ function App() {
         loading={loading}
         movieDetails={movieDetails}
       />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
