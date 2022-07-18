@@ -16,6 +16,14 @@ import "./Favorites.css";
 export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
   const [showFavorites, setShowFavorites] = useState<boolean>(false);
 
+  const setBodyStyle = () => {
+    if (showFavorites === false) {
+      document.body.style.overflow = "unset";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  };
+
   const removeFromLs = (id: number) => {
     const saved = localStorage.getItem("favorites");
     if (saved) {
@@ -36,12 +44,12 @@ export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
       const parseSaved = JSON.parse(saved);
       setFavorite(parseSaved);
     }
+    setBodyStyle();
   }, [setFavorite]);
 
   return (
     <div className="favorites">
       <div className="favorites__header">
-        <h2>Start typing in the search input</h2>
         <button
           className="favorites__button"
           onClick={(e: React.MouseEvent<HTMLButtonElement>) =>

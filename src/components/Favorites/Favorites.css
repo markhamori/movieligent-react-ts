@@ -5,17 +5,13 @@
 }
 
 .favorites__header {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-}
-
-.favorites__header h2 {
-  font-size: 20px;
-  font-weight: 300;
-  color: #616161;
-  margin: 0;
-  text-transform: uppercase;
+  z-index: 100;
 }
 
 .favorites__body {
@@ -35,7 +31,7 @@
   overflow: scroll;
   z-index: 999;
   transition: all 0.5s ease-in-out;
-  animation: expand 0.3s ease forwards;
+  animation: slideUp 0.3s ease forwards;
 }
 
 .favorites__content {
@@ -83,7 +79,7 @@
   position: relative;
   height: 45px;
   width: 45px;
-  font-size: 28px;
+  font-size: 36px;
   background: none;
   border: none;
   border-radius: 5px;
@@ -101,7 +97,7 @@
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
 }
 

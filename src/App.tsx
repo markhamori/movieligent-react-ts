@@ -4,10 +4,6 @@ import axios from "axios";
 // Components
 import { Header } from "./components/Header/Header";
 import { Main } from "./components/Main/Main";
-import { Footer } from "./components/Footer/Footer";
-
-// Images
-import undrawIllustration from "../src/assets/Undraw-illustration.svg";
 
 // Styles
 import "./App.css";
@@ -44,7 +40,7 @@ function App() {
         }
         setTimeout(() => {
           setLoading(false);
-        }, 1500);
+        }, 1000);
       }
     } catch (err) {
       console.error(err);
@@ -90,13 +86,6 @@ function App() {
         loading={loading}
         movieDetails={movieDetails}
       />
-      {query === "" ? (
-        <div className="app__illustration">
-          <img src={undrawIllustration} alt="undraw-co-illustration" />
-        </div>
-      ) : (
-        ""
-      )}
     </div>
   );
 }
