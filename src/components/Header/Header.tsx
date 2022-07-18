@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 // Images
 import Logo from "../../assets/Movieligent-logo.svg";
 
@@ -13,8 +15,15 @@ import { HeaderProps } from "../../types/types";
 export const Header = ({
   handleChange,
   handleKeyPress,
-  searchButton,
+  setQuery,
 }: HeaderProps) => {
+  const inputField = useRef<HTMLInputElement>(null);
+
+  const searchButton = () => {
+    const value = inputField.current?.value;
+    if (value !== undefined) setQuery(value);
+  };
+
   return (
     <div className="header">
       <div className="header__logo">
@@ -25,6 +34,7 @@ export const Header = ({
           <input
             type="text"
             name="search"
+            ref={inputField}
             placeholder="Search a movie..."
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
@@ -35,9 +45,7 @@ export const Header = ({
           />
           <button
             type="button"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-              searchButton(e)
-            }
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => searchButton()}
           >
             <FiSearch />
           </button>

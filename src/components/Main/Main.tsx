@@ -22,22 +22,26 @@ export const Main = ({
   loading,
   movieDetails,
 }: MainProps) => {
-  const [favorite, setFavorite] = useState<FavMovieDetailType[]>(favoritesFromLs);
+  const [favorite, setFavorite] =
+    useState<FavMovieDetailType[]>(favoritesFromLs);
 
   const addToLs = (mov: FavMovieDetailType, id: number) => {
-    if(favorite.length === 0) {
-      setFavorite(prev => [...prev, mov]);
+    if (favorite.length === 0) {
+      setFavorite((prev) => [...prev, mov]);
     } else {
-      favorite.map(el => {
-        if(el.id === id) throw new Error("Already in the local storage.")
+      favorite.map((el) => {
+        if (el.id === id) {
+          alert("Already in the local storage.");
+          throw new Error("Already in the local storage.");
+        }
       });
-      setFavorite(prev => [...prev, mov]);
+      setFavorite((prev) => [...prev, mov]);
     }
   };
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorite));
-  }, [favorite])
+  }, [favorite]);
 
   return (
     <div className="main">
@@ -70,6 +74,7 @@ export const Main = ({
                 overview={mov.overview}
                 releaseDate={mov.release_date}
                 posterPath={mov.poster_path}
+                favorite={false}
               />
             </div>
           ))

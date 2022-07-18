@@ -19,7 +19,7 @@ export type FavMovieDetailType = {
 export type HeaderProps = {
   handleChange: React.ChangeEventHandler<HTMLInputElement>;
   handleKeyPress: React.KeyboardEventHandler<HTMLInputElement>;
-  searchButton: React.MouseEventHandler<HTMLButtonElement>;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export type MainProps = {
@@ -35,6 +35,7 @@ export type CardProps = {
   overview: string;
   releaseDate: string;
   posterPath: string | null;
+  favorite: boolean;
 };
 
 export type PaginationProps = {
@@ -44,6 +45,6 @@ export type PaginationProps = {
 };
 
 export type FavoriteProps = {
-  favorite: FavMovieDetailType[],
+  favorite: FavMovieDetailType[];
   setFavorite: React.Dispatch<React.SetStateAction<FavMovieDetailType[]>>;
-}
+};

@@ -1,10 +1,25 @@
 .app {
+  position: relative;
   height: 100vh;
   width: 100vw;
   padding-left: 6rem;
   padding-right: 6rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.app__illustration {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app__illustration img {
+  height: auto;
+  max-width: 100%;
+  opacity: 50%;
 }
 
 @media only screen and (max-width: 595px) {

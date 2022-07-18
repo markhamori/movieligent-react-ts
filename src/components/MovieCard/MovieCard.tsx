@@ -15,9 +15,8 @@ export const MovieCard = ({
   overview,
   posterPath,
   releaseDate,
+  favorite,
 }: CardProps) => {
-  let favorite = true;
-  
   return (
     <div className="movie__card">
       <div
