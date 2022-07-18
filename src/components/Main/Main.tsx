@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Components
 import { Spinner } from "../Spinner/Spinner";
@@ -12,6 +12,9 @@ import "./Main.css";
 // Types
 import { MainProps, FavMovieDetailType } from "../../types/types";
 
+const ls = localStorage.getItem("favorites");
+const favoritesFromLs = ls !== null ? JSON.parse(ls) : [];
+
 export const Main = ({
   pages,
   totalPages,
@@ -19,27 +22,22 @@ export const Main = ({
   loading,
   movieDetails,
 }: MainProps) => {
-  const [favorite, setFavorite] = useState<FavMovieDetailType[]>([]);
-  let arr:object[] = [];
+  const [favorite, setFavorite] = useState<FavMovieDetailType[]>(favoritesFromLs);
 
   const addToLs = (mov: FavMovieDetailType, id: number) => {
     if(favorite.length === 0) {
       setFavorite(prev => [...prev, mov]);
-      arr.push(mov);
-      localStorage.setItem("favorites", JSON.stringify(arr));
     } else {
-      // Check the clicked movie is not already in the localstorge
       favorite.map(el => {
         if(el.id === id) throw new Error("Already in the local storage.")
       });
-
-      console.log(favorite);
-      setFavorite([...favorite, mov]);
-      console.log(favorite);
-      localStorage.setItem("favorites", JSON.stringify(favorite));
+      setFavorite(prev => [...prev, mov]);
     }
   };
-  // Check which item already added to the favorites. Show filled heart these
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorite));
+  }, [favorite])
 
   return (
     <div className="main">

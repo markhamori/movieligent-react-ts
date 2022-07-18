@@ -33,15 +33,6 @@ function App() {
         const { data } = await axios.get(searchByTitle(query, pages), {
           cancelToken: source.token,
         });
-
-        // Add favorite key/value pair to results object
-        // const addFavorite = () => {
-        //   for (const result of data.results) {
-        //     result.favorite = false;
-        //   }
-        //   return data.results;
-        // };
-
         setMovieDetails(data.results);
         if (data.total_pages >= 12) {
           setTotalPages(12);
@@ -50,7 +41,7 @@ function App() {
         }
         setTimeout(() => {
           setLoading(false);
-        }, 2000);
+        }, 1500);
       }
     } catch (err) {
       console.error(err);
@@ -102,7 +93,6 @@ function App() {
         loading={loading}
         movieDetails={movieDetails}
       />
-      {/* <Footer /> */}
     </div>
   );
 }
