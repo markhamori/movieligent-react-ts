@@ -7,7 +7,6 @@
   padding-bottom: 3rem;
 }
 
-/* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 595px) {
   .app {
     padding-left: 2rem;
@@ -15,7 +14,6 @@
   }
 }
 
-/* Small screen devices (600px and above) */
 @media only screen and (min-width: 600px) {
   .app {
     padding-left: 3rem;
@@ -23,7 +21,6 @@
   }
 }
 
-/* Medium screen devices (768px and above) */
 @media only screen and (min-width: 768px) {
   .app {
     padding-left: 4rem;
@@ -31,7 +28,6 @@
   }
 }
 
-/* Big screen devices (889px and above) */
 @media only screen and (min-width: 889px) {
   .app {
     padding-left: 4rem;
@@ -39,7 +35,6 @@
   }
 }
 
-/* Extra big screen devices (1200px and above) */
 @media only screen and (min-width: 1200px) {
   .app {
     padding-left: 6rem;

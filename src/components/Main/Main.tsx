@@ -32,11 +32,11 @@ export const Main = ({
       favorite.map(el => {
         if(el.id === id) throw new Error("Already in the local storage.")
       });
-      setFavorite(prev => [...prev, mov]);
-      arr.push(mov)
-      console.log(arr);
+
       console.log(favorite);
-      localStorage.setItem("favorites", JSON.stringify(arr));
+      setFavorite([...favorite, mov]);
+      console.log(favorite);
+      localStorage.setItem("favorites", JSON.stringify(favorite));
     }
   };
   // Check which item already added to the favorites. Show filled heart these

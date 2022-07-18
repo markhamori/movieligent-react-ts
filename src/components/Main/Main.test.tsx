@@ -6,9 +6,3 @@ test('renders main text', () => {
   const divElement = screen.getByText("Main");
   expect(divElement).toBeInTheDocument();
 });
-
-test('is there a button with an alert role in the document', () => {
-  // render(<Main />);
-  const alertButton = screen.getByRole("alert");
-  expect(alertButton).toBeInTheDocument();
-});
