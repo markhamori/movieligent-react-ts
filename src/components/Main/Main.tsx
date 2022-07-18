@@ -20,10 +20,22 @@ export const Main = ({
   movieDetails,
 }: MainProps) => {
   const [favorite, setFavorite] = useState<FavMovieDetailType[]>([]);
+  let arr:object[] = [];
 
-  const addToLs = (mov: FavMovieDetailType) => {
-    setFavorite((prev) => [...prev, mov]);
-    if (favorite) localStorage.setItem("favorites", JSON.stringify(favorite));
+  const addToLs = (mov: FavMovieDetailType, id: number) => {
+    if(favorite.length === 0) {
+      setFavorite(prev => [...prev, mov]);
+      arr.push(mov);
+      localStorage.setItem("favorites", JSON.stringify(arr));
+    } else {
+      favorite.map(el => {
+        if(el.id === id) throw new Error("Already in the local storage.")
+      });
+
+      setFavorite(prev => [...prev, mov]);
+      localStorage.setItem("favorites", JSON.stringify(favorite));
+      console.log("Favorite added. If branch.");
+    }
   };
 
   // Check the clicked movie is not already in the localstorge
@@ -52,7 +64,7 @@ export const Main = ({
             <div
               key={mov.id}
               onClick={(e: React.MouseEvent<HTMLDivElement>) =>
-                addToLs(mov)
+                addToLs(mov, mov.id)
               }
             >
               <MovieCard
