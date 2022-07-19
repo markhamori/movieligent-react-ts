@@ -2,7 +2,7 @@
 
 #### Install dependencies:
 
-`$ npm install marked`
+`$ npm install`
 
 #### Run the applications:
 
