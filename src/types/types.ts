@@ -17,6 +17,8 @@ export type MainProps = {
   pages: number;
   totalPages: number | null;
   selectPage: React.MouseEventHandler<HTMLButtonElement>;
+  prevPage: React.MouseEventHandler<HTMLButtonElement>;
+  nextPage: React.MouseEventHandler<HTMLButtonElement>;
   loading: boolean;
   movieDetails: MovieDetailType[];
 };
@@ -32,7 +34,9 @@ export type CardProps = {
 export type PaginationProps = {
   pages: number;
   totalPages: number | null;
-  selectPage: React.MouseEventHandler<HTMLButtonElement>
+  selectPage: React.MouseEventHandler<HTMLButtonElement>;
+  prevPage: React.MouseEventHandler<HTMLButtonElement>;
+  nextPage: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export type FavoriteProps = {

@@ -10,6 +10,8 @@ export const Pagination = ({
   pages,
   totalPages,
   selectPage,
+  prevPage,
+  nextPage
 }: PaginationProps) => {
   const currentPageBtns = document.querySelectorAll(".pagination__button");
 
@@ -25,8 +27,8 @@ export const Pagination = ({
 
   return (
     <div className="pagination">
-      <button className="pagination__button--prev"
-      >
+      <button className="pagination__button--prev" 
+              onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => prevPage(e) }>
         PREV
       </button>
         {totalPages &&
@@ -42,7 +44,8 @@ export const Pagination = ({
               {i + 1}
             </button>
         ))}
-        <button className="pagination__button--next">
+        <button className="pagination__button--next" 
+                onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => nextPage(e)}>
         NEXT
       </button>
     </div>

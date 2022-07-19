@@ -22,6 +22,8 @@ export const Main = ({
   pages,
   totalPages,
   selectPage,
+  prevPage,
+  nextPage,
   loading,
   movieDetails,
 }: MainProps) => {
@@ -56,6 +58,8 @@ export const Main = ({
             pages={pages}
             totalPages={totalPages}
             selectPage={selectPage}
+            prevPage={prevPage}
+            nextPage={nextPage}
           />
         </>
       ) : (

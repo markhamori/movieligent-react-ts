@@ -71,6 +71,14 @@ function App() {
     setPages(targetValue);
   };
 
+  const prevPage = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if(pages && pages > 1) setPages(pages - 1);
+  };
+
+  const nextPage = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if(pages && pages < 12) setPages(pages + 1);
+  };
+
   return (
     <div className="app">
       <Header
@@ -82,6 +90,8 @@ function App() {
         pages={pages}
         totalPages={totalPages}
         selectPage={selectPage}
+        prevPage={prevPage}        
+        nextPage={nextPage}        
         loading={loading}
         movieDetails={movieDetails}
       />
