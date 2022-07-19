@@ -20,7 +20,7 @@ export const MovieCard = ({
   return (
     <div className="movie__card">
       <div
-        className="movie__card--details"
+        className="movie__card--overlay"
         style={{
           backgroundImage: `${
             posterPath === null
@@ -29,10 +29,10 @@ export const MovieCard = ({
           }`,
         }}
       >
-        <div className="movie__card--favorites">
+        <div className="movie__card--fav-icon">
           {favorite === true ? <AiFillHeart /> : <AiOutlineHeart />}
         </div>
-        <div className="movie__card--overlay">
+        <div className="movie__card--details">
           <h3>{title}</h3>
           {releaseDate !== undefined ? (
             <p>({releaseDate.slice(0, 4)})</p>

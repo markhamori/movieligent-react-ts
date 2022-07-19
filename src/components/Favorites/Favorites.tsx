@@ -49,7 +49,6 @@ export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
 
   return (
     <div className="favorites">
-      <div className="favorites__header">
         <button
           className="favorites__button"
           onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
@@ -59,7 +58,6 @@ export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
           <BsHeartFill />
           <span>{favorite.length === null ? "0" : favorite.length}</span>
         </button>
-      </div>
 
       {showFavorites && (
         <div className="favorites__body">

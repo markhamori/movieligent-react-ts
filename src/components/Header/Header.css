@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* border-bottom: 1px solid #3b3b3b; */
+  border-bottom: 1px solid #3b3b3b;
   padding-bottom: 1rem;
 }
 
@@ -14,11 +14,6 @@
 .header__logo img {
   max-width: 60%;
   height: auto;
-}
-
-.header__menu {
-  display: flex;
-  flex-direction: row;
 }
 
 .header__input {

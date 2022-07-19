@@ -29,7 +29,7 @@ export const Header = ({
       <div className="header__logo">
         <img src={Logo} alt="movieligent-logo" />
       </div>
-      <div className="header__menu">
+
         <div className="header__input">
           <input
             type="text"
@@ -50,7 +50,6 @@ export const Header = ({
             <FiSearch />
           </button>
         </div>
-      </div>
     </div>
   );
 };

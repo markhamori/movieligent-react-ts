@@ -70,14 +70,14 @@ export const Main = ({
         ""
       )}
 
-      <div className="main__body">
+      <div className="content">
         {loading ? (
           <Spinner />
         ) : (
           movieDetails &&
           movieDetails.map((mov) => (
             <div
-              className="movie__card--test"
+              className="movie"
               key={mov.id}
               onClick={(e: React.MouseEvent<HTMLDivElement>) =>
                 addToLs(mov, mov.id)
