@@ -32,7 +32,7 @@ export type CardProps = {
 export type PaginationProps = {
   pages: number;
   totalPages: number | null;
-  selectPage: React.MouseEventHandler<HTMLButtonElement>;
+  selectPage: React.MouseEventHandler<HTMLButtonElement>
 };
 
 export type FavoriteProps = {

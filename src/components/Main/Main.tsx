@@ -32,7 +32,7 @@ export const Main = ({
     if (favorite.length === 0) {
       setFavorite((prev) => [...prev, mov]);
     } else {
-      favorite.map((el) => {
+      favorite.forEach((el) => {
         if (el.id === id) {
           alert("Already in the local storage.");
           throw new Error("Already in the local storage.");

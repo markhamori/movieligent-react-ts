@@ -21,10 +21,14 @@ export const Pagination = ({
         btn.classList.remove("current");
       }
     });
-  }, [pages]);
+  }, [pages, currentPageBtns]);
 
   return (
     <div className="pagination">
+      <button className="pagination__button--prev"
+      >
+        PREV
+      </button>
         {totalPages &&
           [...Array(totalPages)].map((e, i) => (
             <button
@@ -38,6 +42,9 @@ export const Pagination = ({
               {i + 1}
             </button>
         ))}
+        <button className="pagination__button--next">
+        NEXT
+      </button>
     </div>
   );
 };

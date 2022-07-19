@@ -22,32 +22,31 @@ function App() {
 
   const [movieDetails, setMovieDetails] = useState<MovieDetailType[]>([]);
 
-  const CancelToken = axios.CancelToken;
-  const source = CancelToken.source();
-
-  const handleFetch = async () => {
-    try {
-      if (query && query !== "") {
-        setLoading(true);
-        const { data } = await axios.get(searchByTitleAndPage(query, pages), {
-          cancelToken: source.token,
-        });
-        setMovieDetails(data.results);
-        if (data.total_pages >= 12) {
-          setTotalPages(12);
-        } else {
-          setTotalPages(data.total_pages);
-        }
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   useEffect(() => {
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+
+    const handleFetch = async () => {
+      try {
+        if (query && query !== "") {
+          setLoading(true);
+          const { data } = await axios.get(searchByTitleAndPage(query, pages), {
+            cancelToken: source.token,
+          });
+          setMovieDetails(data.results);
+          if (data.total_pages >= 12) {
+            setTotalPages(12);
+          } else {
+            setTotalPages(data.total_pages);
+          }
+          setTimeout(() => {
+            setLoading(false);
+          }, 1000);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
     handleFetch();
   }, [query, pages]);
 
