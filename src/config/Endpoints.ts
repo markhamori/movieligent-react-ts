@@ -1,4 +1,4 @@
-export const searchByTitle = (
+export const searchByTitleAndPage = (
   title: string | undefined,
   page: number = 1
 ): string => {

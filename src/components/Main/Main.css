@@ -16,13 +16,13 @@
   color: #3b3b3b;
 }
 
-.main_not-found {
+.main__not-found {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.main_not-found p {
+.main__not-found p {
   font-weight: 200;
 }
 

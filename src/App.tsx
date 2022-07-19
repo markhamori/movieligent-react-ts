@@ -12,7 +12,7 @@ import "./App.css";
 import { MovieDetailType } from "./types/types";
 
 // Endpoints
-import { searchByTitle } from "./config/Endpoints";
+import { searchByTitleAndPage } from "./config/Endpoints";
 
 function App() {
   const [query, setQuery] = useState<string>("");
@@ -29,7 +29,7 @@ function App() {
     try {
       if (query && query !== "") {
         setLoading(true);
-        const { data } = await axios.get(searchByTitle(query, pages), {
+        const { data } = await axios.get(searchByTitleAndPage(query, pages), {
           cancelToken: source.token,
         });
         setMovieDetails(data.results);

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { MovieCard } from "../MovieCard/MovieCard";
 
 // Types
-import { FavMovieDetailType, FavoriteProps } from "../../types/types";
+import { MovieDetailType, FavoriteProps } from "../../types/types";
 
 // Icons
 import { BsHeartFill } from "react-icons/bs";
@@ -21,7 +21,7 @@ export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
     if (saved) {
       const parseSaved = JSON.parse(saved);
       const filtered = parseSaved.filter(
-        (el: FavMovieDetailType) => el.id !== id
+        (el: MovieDetailType) => el.id !== id
       );
       localStorage.clear();
       setFavorite(filtered);

@@ -36,9 +36,7 @@ export const MovieCard = ({
           <h3>{title}</h3>
           {releaseDate !== undefined ? (
             <p>({releaseDate.slice(0, 4)})</p>
-          ) : (
-            "(XXXX)"
-          )}
+          ) :  <p>XXXX</p>}
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ import undrawIllustration from "../../assets/Undraw-illustration.svg";
 import "./Main.css";
 
 // Types
-import { MainProps, FavMovieDetailType } from "../../types/types";
+import { MainProps, MovieDetailType } from "../../types/types";
 
 const ls = localStorage.getItem("favorites");
 const favoritesFromLs = ls !== null ? JSON.parse(ls) : [];
@@ -26,9 +26,9 @@ export const Main = ({
   movieDetails,
 }: MainProps) => {
   const [favorite, setFavorite] =
-    useState<FavMovieDetailType[]>(favoritesFromLs);
+    useState<MovieDetailType[]>(favoritesFromLs);
 
-  const addToLs = (mov: FavMovieDetailType, id: number) => {
+  const addToLs = (mov: MovieDetailType, id: number) => {
     if (favorite.length === 0) {
       setFavorite((prev) => [...prev, mov]);
     } else {
@@ -59,7 +59,7 @@ export const Main = ({
           />
         </>
       ) : (
-        <div className="main_not-found">
+        <div className="main__not-found">
           <p>Movie not found. Please try something else...</p>
         </div>
       )}

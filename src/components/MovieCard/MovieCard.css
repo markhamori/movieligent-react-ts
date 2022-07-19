@@ -79,15 +79,6 @@
   font-weight: 300;
 }
 
-@keyframes slideIn {
-  0% {
-    transform: translateX(500px) scale(0.2);
-  }
-  100% {
-    transform: translateX(0px) scale(1);
-  }
-}
-
 @keyframes expand {
   0% {
     transform: translateX(1400px);

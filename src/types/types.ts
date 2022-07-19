@@ -7,15 +7,6 @@ export type MovieDetailType = {
   favorite: boolean;
 };
 
-export type FavMovieDetailType = {
-  id: number;
-  overview: string;
-  poster_path: string | null;
-  release_date: string;
-  title: string;
-  favorite: boolean;
-};
-
 export type HeaderProps = {
   handleChange: React.ChangeEventHandler<HTMLInputElement>;
   handleKeyPress: React.KeyboardEventHandler<HTMLInputElement>;
@@ -45,6 +36,6 @@ export type PaginationProps = {
 };
 
 export type FavoriteProps = {
-  favorite: FavMovieDetailType[];
-  setFavorite: React.Dispatch<React.SetStateAction<FavMovieDetailType[]>>;
+  favorite: MovieDetailType[];
+  setFavorite: React.Dispatch<React.SetStateAction<MovieDetailType[]>>;
 };
