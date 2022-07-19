@@ -1,4 +1,7 @@
 .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 80vh;
   margin-top: 1rem;
 }
@@ -44,15 +47,16 @@
 }
 
 .main__illustration {
-  position: absolute;
-  width: 400px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-40%, -50%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin-top: 1rem;
 }
 
 .main__illustration img {
   height: auto;
-  max-width: 80%;
+  max-width: 100%;
   opacity: 70%;
 }

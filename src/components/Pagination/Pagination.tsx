@@ -11,7 +11,7 @@ export const Pagination = ({
   totalPages,
   selectPage,
   prevPage,
-  nextPage
+  nextPage,
 }: PaginationProps) => {
   const currentPageBtns = document.querySelectorAll(".pagination__button");
 
@@ -27,27 +27,39 @@ export const Pagination = ({
 
   return (
     <div className="pagination">
-      <button className="pagination__button--prev" 
-              onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => prevPage(e) }>
-        PREV
-      </button>
-        {totalPages &&
-          [...Array(totalPages)].map((e, i) => (
-            <button
-              className="pagination__button"
-              onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-                selectPage(e)
-              }
-              value={i + 1}
-              key={i + 1}
-            >
-              {i + 1}
-            </button>
+      {totalPages && (
+        <button
+          className="pagination__button--prev"
+          onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+            prevPage(e)
+          }
+        >
+          PREV
+        </button>
+      )}
+      {totalPages &&
+        [...Array(totalPages)].map((e, i) => (
+          <button
+            className="pagination__button"
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+              selectPage(e)
+            }
+            value={i + 1}
+            key={i + 1}
+          >
+            {i + 1}
+          </button>
         ))}
-        <button className="pagination__button--next" 
-                onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => nextPage(e)}>
-        NEXT
-      </button>
+      {totalPages && (
+        <button
+          className="pagination__button--next"
+          onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+            nextPage(e)
+          }
+        >
+          NEXT
+        </button>
+      )}
     </div>
   );
 };
