@@ -72,11 +72,12 @@ function App() {
   };
 
   const prevPage = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if(pages && pages > 1) setPages(pages - 1);
+    if (pages && pages > 1) setPages(pages - 1);
   };
 
   const nextPage = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if(pages && pages < 12) setPages(pages + 1);
+    if (totalPages === null) return;
+    if (pages && pages < 12 && pages < totalPages) setPages(pages + 1);
   };
 
   return (
@@ -90,8 +91,8 @@ function App() {
         pages={pages}
         totalPages={totalPages}
         selectPage={selectPage}
-        prevPage={prevPage}        
-        nextPage={nextPage}        
+        prevPage={prevPage}
+        nextPage={nextPage}
         loading={loading}
         movieDetails={movieDetails}
       />

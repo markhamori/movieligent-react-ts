@@ -7,7 +7,7 @@ import { Pagination } from "../Pagination/Pagination";
 import { Favorites } from "../Favorites/Favorites";
 
 // Images
-import undrawIllustration from "../../assets/Undraw-illustration.svg";
+import popcornIllustration from "../../assets/Popcorn-illustration.svg";
 
 // Styles
 import "./Main.css";
@@ -69,7 +69,7 @@ export const Main = ({
 
       {totalPages === null ? (
         <div className="main__illustration">
-          <img src={undrawIllustration} alt="undraw-co-illustration" />
+          <img src={popcornIllustration} alt="popcorn-illustration" />
         </div>
       ) : (
         ""
