@@ -27,8 +27,7 @@ export const Main = ({
   loading,
   movieDetails,
 }: MainProps) => {
-  const [favorite, setFavorite] =
-    useState<MovieDetailType[]>(favoritesFromLs);
+  const [favorite, setFavorite] = useState<MovieDetailType[]>(favoritesFromLs);
 
   const addToLs = (mov: MovieDetailType, id: number) => {
     if (favorite.length === 0) {
@@ -84,6 +83,7 @@ export const Main = ({
           movieDetails.map((mov) => (
             <div
               className="main__movie"
+              data-testid="test-main-movie"
               key={mov.id}
               onClick={(e: React.MouseEvent<HTMLDivElement>) =>
                 addToLs(mov, mov.id)

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-// Componnents
+// Components
 import { MovieCard } from "../MovieCard/MovieCard";
 
 // Types
@@ -20,9 +20,7 @@ export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
     const saved = localStorage.getItem("favorites");
     if (saved) {
       const parseSaved = JSON.parse(saved);
-      const filtered = parseSaved.filter(
-        (el: MovieDetailType) => el.id !== id
-      );
+      const filtered = parseSaved.filter((el: MovieDetailType) => el.id !== id);
       localStorage.clear();
       setFavorite(filtered);
       localStorage.setItem("favorites", JSON.stringify(filtered));
@@ -50,18 +48,19 @@ export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
 
   return (
     <div className="favorites">
-        <button
-          className="favorites__button"
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-            setShowFavorites(!showFavorites)
-          }
-        >
-          <BsHeartFill />
-          <span>{favorite.length === null ? "0" : favorite.length}</span>
-        </button>
+      <button
+        className="favorites__button"
+        data-testid="test-button"
+        onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+          setShowFavorites(!showFavorites)
+        }
+      >
+        <BsHeartFill />
+        <span>{favorite.length === null ? "0" : favorite.length}</span>
+      </button>
 
       {showFavorites && (
-        <div className="favorites__body">
+        <div className="favorites__body" data-testid="test-div">
           <div className="favorites__closeBtn">
             <button
               className="favorites__button"

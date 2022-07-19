@@ -40,6 +40,7 @@ export const Pagination = ({
       {totalPages &&
         [...Array(totalPages)].map((e, i) => (
           <button
+            data-testid="total-pages-btn"
             className="pagination__button"
             onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
               selectPage(e)
