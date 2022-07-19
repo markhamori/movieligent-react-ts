@@ -16,14 +16,6 @@ import "./Favorites.css";
 export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
   const [showFavorites, setShowFavorites] = useState<boolean>(false);
 
-  const setBodyStyle = () => {
-    if (showFavorites === false) {
-      document.body.style.overflow = "unset";
-    } else {
-      document.body.style.overflow = "hidden";
-    }
-  };
-
   const removeFromLs = (id: number) => {
     const saved = localStorage.getItem("favorites");
     if (saved) {
@@ -44,8 +36,17 @@ export const Favorites = ({ favorite, setFavorite }: FavoriteProps) => {
       const parseSaved = JSON.parse(saved);
       setFavorite(parseSaved);
     }
+
+    const setBodyStyle = () => {
+      if (showFavorites === false) {
+        document.body.style.overflow = "unset";
+      } else {
+        document.body.style.overflow = "hidden";
+      }
+    };
+
     setBodyStyle();
-  }, [setFavorite]);
+  }, [setFavorite, showFavorites]);
 
   return (
     <div className="favorites">

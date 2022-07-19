@@ -59,7 +59,9 @@ export const Main = ({
           />
         </>
       ) : (
-        <p>Movie not found. Please try something else...</p>
+        <div className="main_not-found">
+          <p>Movie not found. Please try something else...</p>
+        </div>
       )}
 
       {totalPages === null ? (
@@ -70,14 +72,14 @@ export const Main = ({
         ""
       )}
 
-      <div className="content">
+      <div className="main__content">
         {loading ? (
           <Spinner />
         ) : (
           movieDetails &&
           movieDetails.map((mov) => (
             <div
-              className="movie"
+              className="main__movie"
               key={mov.id}
               onClick={(e: React.MouseEvent<HTMLDivElement>) =>
                 addToLs(mov, mov.id)
