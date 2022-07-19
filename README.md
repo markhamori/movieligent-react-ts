@@ -2,17 +2,17 @@
 
 #### Install dependencies:
 
-`$ npm install marked`
+`$ npm install`
 
-#### Run the applications
+#### Run the applications:
 
 `$ npm start`
 
-#### Test with RTL ( React Test Library)
+#### Test with RTL ( React Test Library):
 
 `$ npm test`
 
-#### Build the app
+#### Build the app:
 
 `$ npm run build`
 
